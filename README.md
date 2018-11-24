@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Modules Used
+Google Maps React (https://github.com/fullstackreact/google-maps-react)
+
+
 ## Available Scripts
 
 In the project directory, you can run:
