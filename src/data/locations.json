@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Tacos el Forastero",
+    "street": "655 S. Ventura Rd",
+    "city": "Oxnard",
+    "state": "CA",
+    "zip": "93030",
+    "url": "https://www.facebook.com/pages/Tacos-El-Forasteros-on-Ventura-Rd-7th-St/1605986996347641",
+    "pos": {"lat":34.195430,"lng":-119.195230}
+  },
+
+
+  {
+    "name": "Tacos Arandas",
+    "street": "136 W 1st St",
+    "city": "Oxnard",
+    "state": "CA",
+    "zip": "93030",
+    "url": "https://www.facebook.com/pages/Tacos-Arandas/134869146568848",
+    "pos": {"lat":34.202570,"lng":-119.177650}
+  },
+  {
+    "name": "Tacos El Caporal",
+    "street": "2875 E Ventura Blvd",
+    "city": "Oxnard",
+    "state": "CA",
+    "zip": "93036",
+    "url": "https://www.facebook.com/tacoselcaporal805/",
+    "pos": {"lat":34.223020,"lng":-119.134650}
+  },
+  {
+    "name": "Tacos Jerez",
+    "street": "2-198 W Pleasant Valley Rd",
+    "city": "Oxnard",
+    "state": "CA",
+    "zip": "93033",
+    "url": "https://www.facebook.com/Juareztacos2018/",
+    "pos": {"lat":34.202570,"lng":-119.177650}
+  },
+  {
+    "name": "El Taco Loco",
+    "street": "2805 E Vineyard St",
+    "city": "Oxnard",
+    "state": "CA",
+    "zip": "93036",
+    "url": "https://www.facebook.com/eltacolocodeoxnard/",
+    "pos": {"lat":34.235680,"lng":-119.170360}
+  },
+  {
+    "name": "Tacos El Trompito",
+    "street": "2805 E Vineyard St",
+    "city": "Oxnard",
+    "state": "CA",
+    "zip": "93036",
+    "url": "https://www.facebook.com/TACOS-El-Trompito-757702580983538/",
+    "pos": {"lat":34.18184,"lng":-119.172521}
+  },
+],
