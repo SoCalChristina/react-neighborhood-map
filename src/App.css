@@ -1,13 +1,29 @@
 .App {
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+/* source for vmin and vmax: http://thenewcode.com/1137/MinMaxing-Understanding-vMin-and-vMax-in-CSS */
+.app-header {
+  min-height: 8vmax;
+  background-color: #5AAAE7;
+  padding: 2vmax;
+}
+.logo {
+  min-height: 5vmax;
+  margin: 0;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.app-logo {
+  animation-name: slidein, shake;
+  animation-duration: 2s, 0.5s;
+  animation-iteration-count: 1, 2;
+  animation-delay: 0s, 2s;
+  width: 20vmin;
+
 }
 
-.App-header {
+/*.App-header {*/
+.map-nav-container {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -18,15 +34,93 @@
   color: white;
 }
 
+h1 {
+  font-family: 'Unlock', cursive;
+  font-size: 10vmin;
+  text-align: center;
+  margin: 0;
+  color: #fff;
+  letter-spacing: 0.5vmin;
+}
+
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* source: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations */
+@keyframes slidein {
+  /* for chrome and safari*/
+           -webkit-animation-duration: 3s;
+           -webkit-animation-name: slidein;
+
+           /*for firefox*/
+           -moz-animation-duration: 3s;
+           -moz-animation-name: slidein;
+
+             /* for opera*/
+           -o-animation-duration: 3s;
+           -o-animation-name: slidein;
+
+             /* Standard syntax*/
+           animation-duration: 3s;
+           animation-name: slidein;
+       }
+
+       @-webkit-keyframes slidein {
+           from {
+               margin-left: 100%;
+               width: 25%;
+           }
+
+           to {
+               margin-left: 0%;
+               width: 25%;
+           }
+       }
+
+       @-moz-keyframes slidein {
+           from {
+               margin-left: 100%;
+               width: 20vmin;
+           }
+
+           to {
+               margin-left: 0%;
+               width: 20vmin;
+           }
+       }
+        @-o-keyframes slidein {
+           from {
+               margin-left: 100%;
+               width: 20vmin;
+           }
+
+           to {
+               margin-left: 0%;
+               width: 20vmin;
+           }
+       }
+         @keyframes slidein {
+           from {
+               margin-left: 100%;
+               width: 20vmin;
+           }
+
+           to {
+               margin-left: 0%;
+               width: 20vmin;
+           }
+       }
+       @keyframes shake {
+           0% { transform: translate(1px, 1px) rotate(0deg); }
+           10% { transform: translate(-1px, -2px) rotate(-1deg); }
+           20% { transform: translate(-3px, 0px) rotate(1deg); }
+           30% { transform: translate(3px, 2px) rotate(0deg); }
+           40% { transform: translate(1px, -1px) rotate(1deg); }
+           50% { transform: translate(-1px, 2px) rotate(-1deg); }
+           60% { transform: translate(-3px, 1px) rotate(0deg); }
+           70% { transform: translate(3px, 1px) rotate(-1deg); }
+           80% { transform: translate(-1px, -1px) rotate(1deg); }
+           90% { transform: translate(1px, 2px) rotate(0deg); }
+           100% { transform: translate(1px, -2px) rotate(-1deg); }
+       }
