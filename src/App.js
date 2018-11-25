@@ -12,6 +12,7 @@ class App extends Component {
     zoom: 10,
     all: locations
   }
+
   render = () => {
     return (
       <div className="App">
