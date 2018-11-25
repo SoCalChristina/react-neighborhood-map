@@ -2,23 +2,49 @@
   text-align: center;
   font-family: 'Roboto', sans-serif;
 }
+
 /* source for vmin and vmax: http://thenewcode.com/1137/MinMaxing-Understanding-vMin-and-vMax-in-CSS */
 .app-header {
-  min-height: 8vmax;
   background-color: #5AAAE7;
-  padding: 2vmax;
+  min-height: 8vmax;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  width: 100vw;
+/*background: #5AAAE7;*/
+/*  min-height: 8vmax;
+  background-color: #5AAAE7;
+  padding: 1.5vmax; */
 }
+
+h1 {
+  background-color: #5AAAE7;
+  min-height: 8vmax;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  width: 100vw;
+}
+
 .logo {
-  min-height: 5vmax;
+  height: 15vmax;
   margin: 0;
+  width: 100vw;
 }
 
 .app-logo {
   animation-name: slidein, shake;
-  animation-duration: 2s, 0.5s;
+  animation-duration: 2000ms, 500ms;
   animation-iteration-count: 1, 2;
-  animation-delay: 0s, 2s;
-  width: 20vmin;
+  animation-delay: 0s, 2000ms;
+  width: 15vmax;
+  background: #5AAAE7;
 
 }
 
@@ -46,6 +72,7 @@ h1 {
 .App-link {
   color: #61dafb;
 }
+
 
 /* source: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations */
 @keyframes slidein {
