@@ -27,7 +27,7 @@ class MapDisplay extends Component {
     componentWillReceiveProps = (props) => {
         this.setState({firstDrop: false});
 
-        // Change in the number of locations, so update the markers
+        // update markers with location changes
         if (this.state.markers.length !== props.locations.length) {
             this.closeInfoWindow();
             this.updateMarkers(props.locations);
@@ -36,16 +36,18 @@ class MapDisplay extends Component {
             return;
         }
 
-        // The selected item is not the same as the active marker, so close the info window
+        // close current info window when selected markers don't match
         if (!props.selectedIndex || (this.state.activeMarker &&
             (this.state.markers[props.selectedIndex] !== this.state.activeMarker))) {
             this.closeInfoWindow();
         }
 
-        // Make sure there's a selected index
+        // check for for selected index
         if (props.selectedIndex === null || typeof(props.selectedIndex) === "undefined") {
             return;
         };
+        // Treat the marker as clicked
+        this.onMarkerClick(this.state.markerProps[props.selectedIndex], this.state.markers[props.selectedIndex]);
     }
 
     mapReady = (props, map) => { //pass the props and map once map is loaded
@@ -54,7 +56,7 @@ class MapDisplay extends Component {
     }
 
     closeInfoWindow = () => {
-        // Disable currently active markers
+        // Disable currently active animation on markers
         this.state.activeMarker && this
              .state
              .activeMarker
@@ -75,7 +77,7 @@ class MapDisplay extends Component {
         // Close open info windows
         this.closeInfoWindow();
 
-        // Fetch the FourSquare data for the selected restaurant: radius set to 250 yards of ll (latitude and longitude), ll accuracy set to within 250 yards
+        // Fetch the FourSquare data for the selected taco truck: radius set to 250 yards of ll (latitude and longitude), ll accuracy set to within 200 yards
         let url = `https://api.foursquare.com/v2/venues/search?client_id=${FS_CLIENT}&client_secret=${FS_SECRET}&v=${FS_VERSION}&radius=250&ll=${props.position.lat},${props.position.lng}&llAcc=200`;
         let headers = new Headers();
         let request = new Request(url, {
@@ -172,42 +174,42 @@ class MapDisplay extends Component {
         }
         let amProps = this.state.activeMarkerProps;
 
-  return (
-      <Map
-          role="application"
-          aria-label="map"
-          onReady={this.mapReady}
-          google={this.props.google}
-          zoom={this.props.zoom}
-          style={style}
-          initialCenter={center}
-          onClick={this.closeInfoWindow}>
-          <InfoWindow
-              marker={this.state.activeMarker}
-              visible={this.state.showingInfoWindow}
-              onClose={this.closeInfoWindow}>
-              <div>
-                  <h3>{amProps && amProps.name}</h3>
-                  {amProps && amProps.url
-                      ? (
-                          <a href={amProps.url}>See website</a>
-                      )
-                      : ""}
-                  {amProps && amProps.images
-                      ? (
-                          <div><image
-                              alt={amProps.name + " food picture"}
-                              src={amProps.images.items[0].prefix + "100x100" + amProps.images.items[0].suffix}/>
-                              <p>Powered By Foursquare</p>
-                          </div>
-                      )
-                      : ""
-                  }
-              </div>
-          </InfoWindow>
-      </Map>
-    )
-  }
+        return (
+            <Map
+                role="application"
+                aria-label="map"
+                onReady={this.mapReady}
+                google={this.props.google}
+                zoom={this.props.zoom}
+                style={style}
+                initialCenter={center}
+                onClick={this.closeInfoWindow}>
+            <InfoWindow
+                marker={this.state.activeMarker}
+                visible={this.state.showingInfoWindow}
+                onClose={this.closeInfoWindow}>
+                <div>
+                      <h3>{amProps && amProps.name}</h3>
+                      {amProps && amProps.url
+                          ? (
+                              <a href={amProps.url}>See website</a>
+                          )
+                          : ""}
+                      {amProps && amProps.images
+                          ? (
+                              <div><image
+                                  alt={amProps.name + " food picture"}
+                                  src={amProps.images.items[0].prefix + "100x100" + amProps.images.items[0].suffix}/>
+                                  <p>Powered By Foursquare</p>
+                              </div>
+                          )
+                          : ""
+                      }
+                  </div>
+              </InfoWindow>
+          </Map>
+        )
+    }
 }
 
 export default GoogleApiWrapper({apiKey: MAP_KEY})(MapDisplay)
