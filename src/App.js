@@ -34,6 +34,13 @@ class App extends Component {
         }
       };
 
+      componentDidMount = () => {
+        this.setState({
+          ...this.state,
+          filtered: this.filterLocations(this.state.all, "")
+        });
+      }
+
       toggleDrawer = () => {
         // Toggle the value controlling whether the drawer is displayed
           this.setState({
@@ -41,6 +48,20 @@ class App extends Component {
             });
       }
 
+      updateQuery = (query) => {
+        // Update the query value and filter the list of locations accordingly
+        this.setState({
+          ...this.state,
+          selectedIndex: null,
+          filtered: this.filterLocations(this.state.all, query)
+        });
+      }
+
+      filterLocations = (locations, query) => {
+        // Filter locations to match query string
+        return locations.filter(location => location.name.toLowerCase().includes(query.toLowerCase()));
+      }
+      
       render = () => {
           return (
               <div className="App">
