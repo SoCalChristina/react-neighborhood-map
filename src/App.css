@@ -1,19 +1,23 @@
 .App {
   text-align: center;
   font-family: 'Roboto', sans-serif;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* source for vmin and vmax: http://thenewcode.com/1137/MinMaxing-Understanding-vMin-and-vMax-in-CSS */
 .app-header {
   background-color: #5AAAE7;
-  min-height: 8vmax;
+  min-height: 5vmax;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 0.5vmin);
   color: white;
   width: 100vw;
+  padding: 1vh;
 /*background: #5AAAE7;*/
 /*  min-height: 8vmax;
   background-color: #5AAAE7;
@@ -22,18 +26,18 @@
 
 h1 {
   background-color: #5AAAE7;
-  min-height: 8vmax;
+  min-height: 2vmax;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 0.5vmin);
   color: white;
   width: 100vw;
 }
 
 .logo {
-  height: 15vmax;
+  height: 8rem;
   margin: 0;
   width: 100vw;
 }
@@ -42,7 +46,7 @@ h1 {
   animation-name: slidein, shake;
   animation-duration: 2000ms, 500ms;
   animation-iteration-count: 1, 2;
-  animation-delay: 0s, 2000ms;
+  animation-delay: 1000ms, 3000ms;
   width: 15vmax;
   background: #5AAAE7;
 

@@ -172,7 +172,7 @@ class MapDisplay extends Component {
                       : ""}
                   {amProps && amProps.images
                       ? (
-                          <div><images
+                          <div><image
                               alt={amProps.name + " food picture"}
                               src={amProps.images.items[0].prefix + "100x100" + amProps.images.items[0].suffix}/>
                               <p>Powered By Foursquare</p>
