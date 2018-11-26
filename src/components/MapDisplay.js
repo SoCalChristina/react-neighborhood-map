@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Map, InfoWindow, GoogleApiWrapper} from 'google-maps-react';
-
+import errorAlert from './errorAlert';
 //declare map api as a constant with API keys
 const MAP_KEY = 'AIzaSyBVMw1jhal8PJLsikGso7YOp-qqDHATDC4'; //use with GoogleApiWrapper component
 const FS_CLIENT = 'CXKH1EGY1G5CKFK1I2OTHS4GKIFMSRN3FLSLPH5QNBP3YWV3';
@@ -128,15 +128,15 @@ class MapDisplay extends Component {
       if (!locations)
           return;
 
-        // Remove all existing markers
+        // Clear all markers from the map
         this
              .state
              .markers
              .forEach(marker => marker.setMap(null));
-
+        //iterate over locations for marker properties
+        //place markers on the map
         let markerProps = [];
         let markers = locations.map((location, index) => {
-
             // using same props in locations.js file
             let mProps = {
                 key: index,
@@ -200,6 +200,8 @@ class MapDisplay extends Component {
                               <div><image
                                   alt={amProps.name + " food picture"}
                                   src={amProps.images.items[0].prefix + "100x100" + amProps.images.items[0].suffix}/>
+                                  //use language suggested by FourSquare for visual attributions
+                                  // see: https://developer.foursquare.com/docs/terms-of-use/attribution
                                   <p>Powered By Foursquare</p>
                               </div>
                           )
@@ -212,4 +214,4 @@ class MapDisplay extends Component {
     }
 }
 
-export default GoogleApiWrapper({apiKey: MAP_KEY})(MapDisplay)
+export default GoogleApiWrapper({apiKey: MAP_KEY, LoadingContainer: errorAlert})(MapDisplay)
