@@ -10,7 +10,7 @@ class ErrorAlert extends Component {
         let timeout = window.setTimeout(this.showMessage, 1000);
         this.setState({timeout});
     }
-
+//clear timeout if it's still running
     componentWillUnmount = () => {
         window.clearTimeout(this.state.timeout);
     }
@@ -21,7 +21,7 @@ class ErrorAlert extends Component {
 
     render = () => {
         return (
-           <div>
+            <div>
                 {this.state.show
                     ? (
                         <div>
@@ -30,7 +30,7 @@ class ErrorAlert extends Component {
                         </div>
                     ):
                     (<div><h1>Loading</h1></div>)}
-                     </div>
+                    </div>
         )
     }
 }

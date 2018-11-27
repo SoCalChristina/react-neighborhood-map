@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+//documentation https://material-ui.com/
 import Drawer from '@material-ui/core/Drawer';
 
 class ListDrawer extends Component {
@@ -53,7 +54,7 @@ class ListDrawer extends Component {
                             placeholder="Filter list"
                             name="filter"
                             onChange={e => this
-                                .updateQuery(e.target.value)}
+                            .updateQuery(e.target.value)}
                             value={this.state.query} />
                         <ul style={this.styles.noBullets}>
                             {this.props.Locations && this
