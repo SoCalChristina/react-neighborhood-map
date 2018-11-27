@@ -13,7 +13,7 @@ class App extends Component {
       //set neighborhood with latitude and longitude values
         lat: 34.1975048,
         lon: -119.1770516,
-        all: locations,
+        all: Locations,
         //enlarge map display
         zoom: 12,
         open: false
@@ -61,9 +61,9 @@ class App extends Component {
           });
       }
 
-      filterLocations = (locations, query) => {
+      filterLocations = (Locations, query) => {
           // Filter locations to match query string
-          return locations.filter(location => location.name.toLowerCase().includes(query.toLowerCase()));
+          return Locations.filter(location => location.name.toLowerCase().includes(query.toLowerCase()));
       }
 
       clickListItem = (index) => {
@@ -74,7 +74,7 @@ class App extends Component {
       render = () => {
           return (
               <div className="App">
-                  //TODO create and install components for menu button, header, map display, and footer.
+                  {/*TODO create and install components for menu button, header, map display, and footer.*/}
                   <button onClick={this.toggleDrawer} style={this.styles.menuButton}>
                       <i className="fa fa-bars"></i>
                   </button>
@@ -87,11 +87,11 @@ class App extends Component {
                       lat={this.state.lat}
                       lon={this.state.lon}
                       zoom={this.state.zoom}
-                      locations={this.state.filtered}
+                      Locations={this.state.filtered}
                       selectedIndex={this.state.selectedIndex}
                       clickListItem={this.clickListItem}/>
                   <ListDrawer
-                      locations={this.state.filtered}
+                      Locations={this.state.filtered}
                       open={this.state.open}
                       toggleDrawer={this.toggleDrawer}
                       filterLocations={this.updateQuery}

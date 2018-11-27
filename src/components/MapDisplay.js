@@ -28,9 +28,9 @@ class MapDisplay extends Component {
         this.setState({firstDrop: false});
 
         // update markers with location changes
-        if (this.state.markers.length !== props.locations.length) {
+        if (this.state.markers.length !== props.Locations.length) {
             this.closeInfoWindow();
-            this.updateMarkers(props.locations);
+            this.updateMarkers(props.Locations);
             this.setState({activeMarker: null});
 
             return;
@@ -52,7 +52,7 @@ class MapDisplay extends Component {
 
     mapReady = (props, map) => { //pass the props and map once map is loaded
       this.setState({map});
-      this.updateMarkers(this.props.locations);
+      this.updateMarkers(this.props.Locations);
     }
 
     closeInfoWindow = () => {
@@ -63,7 +63,7 @@ class MapDisplay extends Component {
              .setAnimation(null);
          this.setState({showingInfoWindow: false, activeMarker: null, activeMarkerProps: null});
      }
-//look for foursquare data match to hard coded data in locations.json
+//look for foursquare data match to hard coded data in Locations.json
       getBusinessInfo = (props, data) => {
         //get matching data
         return data
@@ -123,9 +123,9 @@ class MapDisplay extends Component {
       }
 
 
-    updateMarkers = (locations) => {
-      // finished after all locations filtered
-      if (!locations)
+    updateMarkers = (Locations) => {
+      // finished after all Locations filtered
+      if (!Locations)
           return;
 
         // Clear all markers from the map
@@ -133,10 +133,10 @@ class MapDisplay extends Component {
              .state
              .markers
              .forEach(marker => marker.setMap(null));
-        //iterate over locations for marker properties
+        //iterate over Locations for marker properties
         //place markers on the map
         let markerProps = [];
-        let markers = locations.map((location, index) => {
+        let markers = Locations.map((location, index) => {
             // using same props in locations.js file
             let mProps = {
                 key: index,

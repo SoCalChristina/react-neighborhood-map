@@ -56,9 +56,9 @@ class ListDrawer extends Component {
                                 .updateQuery(e.target.value)}
                             value={this.state.query} />
                         <ul style={this.styles.noBullets}>
-                            {this.props.locations && this
+                            {this.props.Locations && this
                                 .props
-                                .locations
+                                .Locations
                                 .map((location, index) => {
                                     return (
                                         <li style={this.styles.listItem} key={index}>
