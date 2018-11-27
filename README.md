@@ -1,9 +1,9 @@
 # Taco Track
 
-## Udacity Frontend Developer Nano Degree Project #'7'
+## Udacity Frontend Developer Nano Degree Project 7
 
 ## Summary:
-Taco Track is Taco Truck mapping app. Taco Track uses API data to map, locate, and display information on Taco Trucks in Oxnard, California. The location of each taco truck is identified by a marker on the map. The user clicks on the designated marker to receive additional information about the Taco Truck, including a photograph when available. It's worth taking note that none of the local taco trucks have websites but utilize Facebook as an alternative.
+Taco Track is Taco Truck mapping app. Taco Track uses API data to map, locate, and display information on Taco Trucks in Oxnard, California. A marker identifies the location of each taco truck on the map. The user clicks on the designated map marker to receive additional information about the Taco Truck, including a photograph when available. It's worth taking note that none of the local taco trucks have websites but utilize Facebook as an alternative.
 
 The user clicks on the hamburger menu icon to access a search input window and a pre-populated list of Taco Trucks. Users can track and enjoy some of the best Mexican food in the country.
 
@@ -13,7 +13,7 @@ This is a Reactjs Neighborhood Map app built as the final project of the Udacity
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Getting Started:
-Clone or fork the repository.
+### `Clone or fork repository.`
 (https://github.com/SoCalChristina/react-neighborhood-map)
 
 
@@ -40,7 +40,7 @@ This app uses the default service worker provided in the starter code. The servi
 (https://fontawesome.com/)
 * This app uses FourSquare Developers Places API data (https://developer.foursquare.com/places-api),
 
-* Taco Truck icon made by Freepik (https://www.freepik.com/) from Flaticon (https://www.flaticon.com/) and licensed by (http://creativecommons.org/licenses/by/3.0/ Creative Commons BY 3.0
+* Taco Truck icon made by Freepik (https://www.freepik.com/) from Flaticon (https://www.flaticon.com/) and licensed by (http://creativecommons.org/licenses/by/3.0/) Creative Commons BY 3.0
 
 
 ## References
