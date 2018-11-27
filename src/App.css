@@ -13,7 +13,7 @@
   font-size: calc(10px + 0.5vmin);
   color: white;
   padding: 1vh;
-  width: 100vw;
+  width: 100%;
 }
 
 h1 {
@@ -26,16 +26,13 @@ h1 {
   letter-spacing: 0.5vmin;
 }
 
-
 .app-logo {
-  width: 60px;
+  width: 80px;
+  background: #5AAAE7;
   animation-name: slidein, shake;
   animation-duration: 2000ms, 500ms;
   animation-iteration-count: 1, 2;
   animation-delay: 500ms, 2500ms;
-
-  background: #5AAAE7;
-
 }
 
 .App-link {
@@ -66,46 +63,46 @@ h1 {
        @-webkit-keyframes slidein {
            from {
                margin-left: 100%;
-               width: 15%;
+               width: 12%;
            }
 
            to {
                margin-left: 0%;
-               width: 12%;
+               width: 13%;
            }
        }
 
        @-moz-keyframes slidein {
            from {
                margin-left: 100%;
-               width: 15%;
+               width: 12%;
            }
 
            to {
                margin-left: 0%;
-               width: 12%;
+               width: 13%;
            }
        }
         @-o-keyframes slidein {
            from {
                margin-left: 100%;
-               width: 15%;
+               width: 12%;
            }
 
            to {
                margin-left: 0%;
-               width: 12%;
+               width: 13%;
            }
        }
          @keyframes slidein {
            from {
                margin-left: 100%;
-               width: 15%;
+               width: 12%;
            }
 
            to {
                margin-left: 0%;
-               width: 12%;
+               width: 13%;
            }
        }
        @keyframes shake {
