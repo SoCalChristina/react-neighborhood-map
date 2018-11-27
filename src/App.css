@@ -1,9 +1,14 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 .App {
   text-align: center;
 }
 
 /* source for vmin and vmax: http://thenewcode.com/1137/MinMaxing-Understanding-vMin-and-vMax-in-CSS */
-.app-header {
+.header {
   background-color: #5AAAE7;
   min-height: 12vmax;
   display: flex;

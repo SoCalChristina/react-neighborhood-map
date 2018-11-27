@@ -6,7 +6,7 @@
     "state": "CA",
     "zip": "93030",
     "url": "https://www.facebook.com/pages/Tacos-El-Forasteros-on-Ventura-Rd-7th-St/1605986996347641",
-    "pos": {"lat":34.195430,"lng":-119.195230},
+    "pos": {"lat":"34.195430","lng":"-119.195230"},
     "formattedAddress": [
                         "655 S. Ventura Rd",
                         ", Oxnard, CA 93030"
@@ -21,7 +21,7 @@
     "state": "CA",
     "zip": "93030",
     "url": "https://www.facebook.com/pages/Tacos-Arandas/134869146568848",
-    "pos": {"lat":34.202570,"lon":-119.177650},
+    "pos": {"lat":"34.202570","lng":"-119.177650"},
     "formattedAddress": [
                  "136 W 1st St ",
                  "Oxnard, CA 93030"
@@ -34,7 +34,7 @@
     "state": "CA",
     "zip": "93036",
     "url": "https://www.facebook.com/tacoselcaporal805/",
-    "pos": {"lat":34.223020,"lng":-119.134650},
+    "pos": {"lat":"34.223020","lng":"-119.134650"},
     "formattedAddress": [
                  "2875 E Ventura Blvd ",
                  "Oxnard, CA 93036"
@@ -47,7 +47,7 @@
     "state": "CA",
     "zip": "93033",
     "url": "https://www.facebook.com/Juareztacos2018/",
-    "pos": {"lat":34.202570,"lng":-119.177650},
+    "pos": {"lat":"34.202570","lng":"-119.177650"},
     "formattedAddress": [
                  "2-198 W Pleasant Valley Rd ",
                  "Oxnard, CA 93036"
@@ -60,7 +60,7 @@
     "state": "CA",
     "zip": "93036",
     "url": "https://www.facebook.com/eltacolocodeoxnard/",
-    "pos": {"lat":34.171520,"lng":-119.178233},
+    "pos": {"lat":"34.171520","lng":"-119.178233"},
     "formattedAddress": [
                  "3101 Saviers Rd ",
                  "Oxnard, CA 93036"
@@ -73,7 +73,7 @@
     "state": "CA",
     "zip": "93036",
     "url": "https://www.facebook.com/TACOS-El-Trompito-757702580983538/",
-    "pos": {"lat":34.18184,"lng":-119.172521},
+    "pos": {"lat":"34.18184","lng":"-119.172521"},
     "formattedAddress": [
                  "2805 E Vineyard St ",
                  "Oxnard, CA 93036"

@@ -74,7 +74,7 @@ class App extends Component {
           return (
               <div className="App">
                   {/*TODO create and install components for menu button, header, map display, and footer.*/}
-                  <div className="app-header">
+                  <div className="header">
                       <button onClick={this.toggleDrawer} style={this.styles.menuButton}>
                           <i className="fa fa-bars"></i>
                       </button>
