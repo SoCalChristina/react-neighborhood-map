@@ -7,6 +7,8 @@ Taco Track is Taco Truck mapping app. Taco Track uses API data to map, locate, a
 
 The user clicks on the hamburger menu icon to access a search input window and a pre-populated list of Taco Trucks. Users can track and enjoy some of the best Mexican food in the country.
 
+![screen shot of app](https://github.com/SoCalChristina/react-neighborhood-map/blob/master/src/images/app-image.png "Taco Track")
+
 ## Purpose:
 This is a Reactjs Neighborhood Map app built as the final project of the Udacity Frontend Developer Nano Degree.
 
