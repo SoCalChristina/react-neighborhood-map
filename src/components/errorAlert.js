@@ -25,8 +25,10 @@ class ErrorAlert extends Component {
                 {this.state.show
                     ? (
                         <div>
-                            <h1>Error loading map</h1>
-                                <p>Network Error. Unable to load map. Check for internet connection and try again.</p>
+                            <h3>Error loading map</h3>
+                                <p>Network Error.</p>
+                                <p> Unable to load map. </p>
+                                <p>Check for internet connection and try again.</p>
                         </div>
                     ):
                     (<div><h1>Loading</h1></div>)}

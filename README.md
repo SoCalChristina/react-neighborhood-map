@@ -34,11 +34,12 @@ This app uses the default service worker provided in the starter code. The servi
 ## Attributions
 ### This project utilizes the following:
 * Google Maps
+(https://cloud.google.com/maps-platform/)
 * Google Maps React (https://github.com/fullstackreact/google-maps-react)
 * @material-ui/core (https://www.npmjs.com/package/@material-ui/core)
 * Font Awesome
 (https://fontawesome.com/)
-* This app uses FourSquare Developers Places API data (https://developer.foursquare.com/places-api),
+* FourSquare Developers Places API data (https://developer.foursquare.com/places-api),
 
 * Taco Truck icon made by Freepik (https://www.freepik.com/) from Flaticon (https://www.flaticon.com/) and licensed by (http://creativecommons.org/licenses/by/3.0/) Creative Commons BY 3.0
 

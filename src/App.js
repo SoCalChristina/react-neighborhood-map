@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import ReactDom from 'react-dom';
 
 import './App.css';
 //add an image to react. Source: https://stackoverflow.com/questions/37644265/correct-path-for-img-on-react-js
@@ -25,9 +24,9 @@ class App extends Component {
             marginRight: 20,
             position: "absolute",
             left: 10,
-            top: 70,
-            background: "#5AAAE7",
-            padding: 10
+            top: 40,
+            background: "#fff",
+            padding: 5
         },
         hide: {
             display: 'none'
@@ -75,12 +74,13 @@ class App extends Component {
           return (
               <div className="App">
                   {/*TODO create and install components for menu button, header, map display, and footer.*/}
-                  <button onClick={this.toggleDrawer} style={this.styles.menuButton}>
-                      <i className="fa fa-bars"></i>
-                  </button>
                   <div className="app-header">
-                    <h1>Oxnard Taco Track</h1>
-                        <img src={logo} className="app-logo" alt={"taco truck logo"} />
+                      <button onClick={this.toggleDrawer} style={this.styles.menuButton}>
+                          <i className="fa fa-bars"></i>
+                      </button>
+                      <h1>Oxnard Taco Track</h1>
+                      <img src={logo} className="app-logo" alt={"taco truck logo"} />
+
                   </div>
 
                   <MapDisplay

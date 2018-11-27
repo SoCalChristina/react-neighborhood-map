@@ -5,7 +5,7 @@
 /* source for vmin and vmax: http://thenewcode.com/1137/MinMaxing-Understanding-vMin-and-vMax-in-CSS */
 .app-header {
   background-color: #5AAAE7;
-  min-height: 5vmax;
+  min-height: 12vmax;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,6 +13,7 @@
   font-size: calc(10px + 0.5vmin);
   color: white;
   padding: 1vh;
+  width: 100vw;
 }
 
 h1 {
@@ -20,23 +21,19 @@ h1 {
   font-family: 'Unlock', cursive;
   /*font-size: 10vmin;*/
   text-align: center;
-  min-height: 2vmax;
   margin: 0;
   color: #fff;
   letter-spacing: 0.5vmin;
 }
 
-.logo {
-  height: 5vh;
-  margin: 0;
-}
 
 .app-logo {
+  width: 60px;
   animation-name: slidein, shake;
   animation-duration: 2000ms, 500ms;
   animation-iteration-count: 1, 2;
-  animation-delay: 0ms, 2000ms;
-  width: 15vmax;
+  animation-delay: 500ms, 2500ms;
+
   background: #5AAAE7;
 
 }
@@ -47,6 +44,7 @@ h1 {
 
 
 /* source: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations */
+
 @keyframes slidein {
   /* for chrome and safari*/
            -webkit-animation-duration: 3s;
@@ -68,46 +66,46 @@ h1 {
        @-webkit-keyframes slidein {
            from {
                margin-left: 100%;
-               width: 25%;
+               width: 15%;
            }
 
            to {
                margin-left: 0%;
-               width: 25%;
+               width: 12%;
            }
        }
 
        @-moz-keyframes slidein {
            from {
                margin-left: 100%;
-               width: 20vmin;
+               width: 15%;
            }
 
            to {
                margin-left: 0%;
-               width: 20vmin;
+               width: 12%;
            }
        }
         @-o-keyframes slidein {
            from {
                margin-left: 100%;
-               width: 20vmin;
+               width: 15%;
            }
 
            to {
                margin-left: 0%;
-               width: 20vmin;
+               width: 12%;
            }
        }
          @keyframes slidein {
            from {
                margin-left: 100%;
-               width: 20vmin;
+               width: 15%;
            }
 
            to {
                margin-left: 0%;
-               width: 20vmin;
+               width: 12%;
            }
        }
        @keyframes shake {
