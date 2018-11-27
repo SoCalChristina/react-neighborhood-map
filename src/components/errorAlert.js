@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class errorAlert extends Component {
+class ErrorAlert extends Component {
     state = {
         show: false,
         timeout: null
@@ -35,4 +35,4 @@ class errorAlert extends Component {
     }
 }
 
-export default errorAlert;
+export default ErrorAlert;

@@ -1,12 +1,21 @@
+# Taco Track
+
+## Udacity Frontend Developer Nano Degree Project #'7'
+
+## Summary:
+Taco Track is Taco Truck mapping app. Taco Track uses API data to map, locate, and display information on Taco Trucks in Oxnard, California. The location of each taco truck is identified by a marker on the map. The user clicks on the designated marker to receive additional information about the Taco Truck, including a photograph when available. It's worth taking note that none of the local taco trucks have websites but utilize Facebook as an alternative.
+
+The user clicks on the hamburger menu icon to access a search input window and a pre-populated list of Taco Trucks. Users can track and enjoy some of the best Mexican food in the country.
+
+## Purpose:
+This is a Reactjs Neighborhood Map app built as the final project of the Udacity Frontend Developer Nano Degree.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Modules Used
-Google Maps React (https://github.com/fullstackreact/google-maps-react)
+## Getting Started:
+Clone or fork the repository.
+(https://github.com/SoCalChristina/react-neighborhood-map)
 
-
-## Available Scripts
-
-In the project directory, you can run:
 
 ### `npm start`
 
@@ -19,30 +28,31 @@ You will also see any lint errors in the console.
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+This app uses the default service worker provided in the starter code. The service worker only works in production build.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Attributions
+### This project utilizes the following:
+* Google Maps
+* Google Maps React (https://github.com/fullstackreact/google-maps-react)
+* @material-ui/core (https://www.npmjs.com/package/@material-ui/core)
+* Font Awesome
+(https://fontawesome.com/)
+* This app uses FourSquare Developers Places API data (https://developer.foursquare.com/places-api),
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+* Taco Truck icon made by Freepik (https://www.freepik.com/) from Flaticon (https://www.flaticon.com/) and licensed by (http://creativecommons.org/licenses/by/3.0/ Creative Commons BY 3.0
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## References
+All resources are referenced here and/or in the code.
+* FEND P7 Walkthrough with Doug Brown
+(https://www.youtube.com/watch?reload=9&v=NVAVLCJwAAo&feature=youtu.be)
+* Doug Brown's fend-maps-walkthrough
+(https://github.com/thefinitemonkey/fend-maps-walkthrough/blob/master/src/components/MapDisplay.js)
+* Coding Session - Google Maps With React JS
+(https://www.youtube.com/watch?v=5J6fs_BlVC0&feature=youtu.be)
+* Neighborhood Map (Series of 6 Videos) by Forrest Walker
+(https://www.youtube.com/playlist?list=PL4rQq4MQP1crXuPtruu_eijgOUUXhcUCP)
+* Facebook Create React App
+(https://facebook.github.io/create-react-app/docs/getting-started)
+* [React documentation](https://reactjs.org/).

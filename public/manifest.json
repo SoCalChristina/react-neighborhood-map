@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "taco-tracker",
+  "short_name": "Taco Track",
+  "name": "react-neighborhood-map",
   "icons": [
     {
       "src": "favicon.ico",

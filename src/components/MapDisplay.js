@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Map, InfoWindow, GoogleApiWrapper} from 'google-maps-react';
-import errorAlert from './errorAlert';
+import ErrorAlert from './ErrorAlert';
 //declare map api as a constant with API keys
 const MAP_KEY = 'AIzaSyBVMw1jhal8PJLsikGso7YOp-qqDHATDC4'; //use with GoogleApiWrapper component
 const FS_CLIENT = 'CXKH1EGY1G5CKFK1I2OTHS4GKIFMSRN3FLSLPH5QNBP3YWV3';
@@ -85,12 +85,12 @@ class MapDisplay extends Component {
               headers
         });
 
-        // Create props for the active marker
+        // fetch props for active marker
          let activeMarkerProps;
          fetch(request)
              .then(response => response.json())
              .then(result => {
-                 // Get just the business reference for the restaurant we want from the FourSquare
+                 // Get specified venue data from foursquare
                  // return
                  let restaurant = this.getBusinessInfo(props, result);
                  activeMarkerProps = {
@@ -98,7 +98,7 @@ class MapDisplay extends Component {
                      //first result in array becomes foursquare data to be used in app
                      foursquare: restaurant[0]
                  };
-                 // use foursquare data results to retrieve the images for data results
+                 // use foursquare data results to retrieve the images (if available) for data results
                 if (activeMarkerProps.foursquare) {
                   // use foursquare photo api
                     let url = `https://api.foursquare.com/v2/venues/${restaurant[0].id}/photos?client_id=${FS_CLIENT}&client_secret=${FS_SECRET}&v=${FS_VERSION}`;
@@ -143,7 +143,14 @@ class MapDisplay extends Component {
                 index,
                 name: location.name,
                 position: location.pos,
+                street: location.street,
+                city: location.city,
+                state: location.state,
+                zip: location.zip,
                 url: location.url,
+                // displays address in standard form. This will display street address
+                formattedAddress: location.formattedAddress
+              //  TODO add telephone number
             };
             markerProps.push(mProps);
             //add animation to drop the marker on the map
@@ -168,7 +175,8 @@ class MapDisplay extends Component {
             height: '100vh'
         }
 
-        const center = { // using the google maps format of lat and lon
+        const center = {
+        // using the google maps format of lat and lon not FS lat and lng
           lat: this.props.lat,
           lng: this.props.lon
         }
@@ -190,18 +198,21 @@ class MapDisplay extends Component {
                 onClose={this.closeInfoWindow}>
                 <div>
                       <h3>{amProps && amProps.name}</h3>
+                      {/*add address below Taco Truck name */}
+                      <p>{amProps && amProps.formattedAddress}</p>
+                      {/*add link to business url. Here, I'm linking to Facebook pages because none of the Taco Trucks have websites */}
                       {amProps && amProps.url
                           ? (
-                              <a href={amProps.url}>See website</a>
+                              <a href={amProps.url}>website</a>
                           )
                           : ""}
                       {amProps && amProps.images
                           ? (
-                              <div><image
+                              <div><img
                                   alt={amProps.name + " food picture"}
                                   src={amProps.images.items[0].prefix + "100x100" + amProps.images.items[0].suffix}/>
-                                  //use language suggested by FourSquare for visual attributions
-                                  // see: https://developer.foursquare.com/docs/terms-of-use/attribution
+                                  {/*use language suggested by FourSquare for visual attributions*/}
+                                  {/* see: https://developer.foursquare.com/docs/terms-of-use/attribution*/}
                                   <p>Powered By Foursquare</p>
                               </div>
                           )
@@ -214,4 +225,4 @@ class MapDisplay extends Component {
     }
 }
 
-export default GoogleApiWrapper({apiKey: MAP_KEY, LoadingContainer: errorAlert})(MapDisplay)
+export default GoogleApiWrapper({apiKey: MAP_KEY, LoadingContainer: ErrorAlert})(MapDisplay)

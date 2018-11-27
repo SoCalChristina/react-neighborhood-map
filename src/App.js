@@ -1,19 +1,22 @@
 import React, {Component} from 'react';
+import ReactDom from 'react-dom';
+
+import './App.css';
 //add an image to react. Source: https://stackoverflow.com/questions/37644265/correct-path-for-img-on-react-js
 import logo from './images/taco-truck.png';
-import './App.css';
-import locations from './data/locations.json';
+import Locations from './data/Locations.json';
 import MapDisplay from './components/MapDisplay';
 import ListDrawer from './components/ListDrawer';
 
 class App extends Component {
     state = {
+      //set neighborhood with latitude and longitude values
         lat: 34.1975048,
         lon: -119.1770516,
         all: locations,
-        zoom: 13,
+        //enlarge map display
+        zoom: 12,
         open: false
-
     }
 
     styles = {
@@ -22,8 +25,8 @@ class App extends Component {
             marginRight: 20,
             position: "absolute",
             left: 10,
-            top: 20,
-            background: "white",
+            top: 70,
+            background: "#5AAAE7",
             padding: 10
         },
         hide: {
@@ -33,8 +36,9 @@ class App extends Component {
             marginTop: "0px"
         }
       };
-
+      //https://developmentarc.gitbooks.io/react-indepth/content/life_cycle/birth/post_mount_with_component_did_mount.html
       componentDidMount = () => {
+        //https://facebook.github.io/react-native/docs/state.html
         this.setState({
           ...this.state,
           filtered: this.filterLocations(this.state.all, "")
@@ -42,14 +46,14 @@ class App extends Component {
       }
 
       toggleDrawer = () => {
-        // Toggle the value controlling whether the drawer is displayed
+        // Toggle the value controlling whether the drawer is displayed//
           this.setState({
               open: !this.state.open
           });
       }
 
       updateQuery = (query) => {
-        // Update the query value and filter the list of locations accordingly
+        // filter business location info return by query input
           this.setState({
               ...this.state,
               selectedIndex: null,
@@ -70,16 +74,13 @@ class App extends Component {
       render = () => {
           return (
               <div className="App">
+                  //TODO create and install components for menu button, header, map display, and footer.
                   <button onClick={this.toggleDrawer} style={this.styles.menuButton}>
                       <i className="fa fa-bars"></i>
                   </button>
-              {/*}<div className="app-header"> */}
                   <div className="app-header">
                     <h1>Oxnard Taco Track</h1>
-                {/*  </div>
-                  <div className="logo">  */}
                         <img src={logo} className="app-logo" alt={"taco truck logo"} />
-        {/* </div> */}
                   </div>
 
                   <MapDisplay
@@ -96,10 +97,10 @@ class App extends Component {
                       filterLocations={this.updateQuery}
                       clickListItem={this.clickListItem}/>
                   </div>
+                  //TODO add footer with copyright and contact info
               );
           }
       }
-
 
 
 export default App;
