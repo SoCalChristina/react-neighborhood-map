@@ -55,7 +55,6 @@ class MapDisplay extends Component {
     mapReady = (props, map) => { //pass the props and map once map is loaded
         this.setState({map});
         this.updateMarkers(this.props.Locations);
-      //  this.customMarkers(this.props.style);
     }
 
     closeInfoWindow = () => {
@@ -92,10 +91,8 @@ class MapDisplay extends Component {
 
         // fetch props for active marker
         let activeMarkerProps;
-        fetch(request){
-          //credentials: 'omit'
-        })
-            .then(response => response.json()) //parses response to JSON
+        fetch(request)
+            .then(response => response.json())
             .then(result => {
                 // Get specified venue data from foursquare
                 // return
@@ -160,7 +157,6 @@ class MapDisplay extends Component {
                 formattedAddress: location.formattedAddress,
               //  TODO add contact field and formatted telephone number
             };
-
             markerProps.push(mProps);
             //add animation to drop the marker on the map
             let animation = this.props.google.maps.Animation.DROP;
