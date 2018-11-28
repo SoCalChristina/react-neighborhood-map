@@ -93,7 +93,7 @@ class MapDisplay extends Component {
         // fetch props for active marker
         let activeMarkerProps;
         fetch(request){
-          credentials: 'omit'
+          //credentials: 'omit'
         })
             .then(response => response.json()) //parses response to JSON
             .then(result => {
