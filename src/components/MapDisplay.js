@@ -92,8 +92,10 @@ class MapDisplay extends Component {
 
         // fetch props for active marker
         let activeMarkerProps;
-        fetch(request)
-            .then(response => response.json())
+        fetch(request){
+          credentials: 'omit'
+        })
+            .then(response => response.json()) //parses response to JSON
             .then(result => {
                 // Get specified venue data from foursquare
                 // return

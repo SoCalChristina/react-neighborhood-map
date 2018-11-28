@@ -67,7 +67,7 @@ class App extends Component {
 
       clickListItem = (index) => {
           // Set the state to reflect the selected location array index
-          this.setState({ selectedIndex: index, open: !this.state.open })
+          this.setState({ selectedIndex: index, open: !this.state.open this.tabindex.[0]})
       }
 
       render = () => {
