@@ -18,6 +18,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### `Clone or fork repository.`
 (https://github.com/SoCalChristina/react-neighborhood-map)
 
+### `npm install`
+
+Adds the required dependencies.
 
 ### `npm start`
 
@@ -31,7 +34,13 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.<br>
 
+### Service Worker
 This app uses the default service worker provided in the starter code. The service worker only works in production build.
+
+The service worker is opt-in only. To opt-in, open the serviceWorker.js file and change registration.unregister(); to registration.register();.
+
+If you need to test your offline-first service worker locally, build the application (using npm run build) and run a simple http server from your build directory.
+See: (https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app#offline-first-considerations) for more information.
 
 ## Attributions
 ### This project utilizes the following:
@@ -59,3 +68,4 @@ All resources are referenced here and/or in the code.
 * Facebook Create React App
 (https://facebook.github.io/create-react-app/docs/getting-started)
 * [React documentation](https://reactjs.org/).
+test to fix sync error
