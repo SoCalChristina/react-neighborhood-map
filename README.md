@@ -68,4 +68,3 @@ All resources are referenced here and/or in the code.
 * Facebook Create React App
 (https://facebook.github.io/create-react-app/docs/getting-started)
 * [React documentation](https://reactjs.org/).
-test to fix sync error
