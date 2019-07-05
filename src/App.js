@@ -67,14 +67,14 @@ class App extends Component {
 
       clickListItem = (index) => {
           // Set the state to reflect the selected location array index
-          this.setState({ selectedIndex: index, open: !this.state.open})
+          this.setState({ selectedIndex: index, open: !this.state.open })
       }
 
       render = () => {
           return (
               <div className="App">
                   {/*TODO create and install components for menu button, header, map display, and footer.*/}
-                  <div className="header">
+                  <div className="app-header">
                       <button onClick={this.toggleDrawer} style={this.styles.menuButton}>
                           <i className="fa fa-bars"></i>
                       </button>

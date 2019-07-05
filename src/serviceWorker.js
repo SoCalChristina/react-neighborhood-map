@@ -1,5 +1,7 @@
 // This optional code is used to register a service worker.
+// Use the service worker to cache the app only in production mode.
 // register() is not called by default.
+// To opt-in, open the serviceWorker.js file and change registration.unregister(); to registration.register();.
 
 // This lets the app load faster on subsequent visits in production, and gives
 // it offline capabilities. However, it also means that developers (and users)
@@ -129,7 +131,7 @@ function checkValidServiceWorker(swUrl, config) {
 export function unregister() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.ready.then(registration => {
-      registration.register();
+      registration.unregister();
     });
   }
 }

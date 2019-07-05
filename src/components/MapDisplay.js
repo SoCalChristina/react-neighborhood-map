@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Map, InfoWindow, GoogleApiWrapper} from 'google-maps-react';
 import ErrorAlert from './ErrorAlert';
+import ErrorBoundary from './ErrorBoundary';
 //Tutorial source: https://www.youtube.com/watch?v=NVAVLCJwAAo&feature=youtu.be
 //declare map api as a constant with API keys
 const MAP_KEY = 'AIzaSyBVMw1jhal8PJLsikGso7YOp-qqDHATDC4'; //use with GoogleApiWrapper component
@@ -30,14 +31,13 @@ class MapDisplay extends Component {
         this.setState({firstDrop: false});
 
         // update markers with location changes
-        if (this.state.markers.length !== props.Locations.length) {
+        if (this.state.markers.length !== props.locations.length) {
             this.closeInfoWindow();
-            this.updateMarkers(props.Locations);
+            this.updateMarkers(props.locations);
             this.setState({activeMarker: null});
 
             return;
         }
-
         // close current info window when selected markers don't match
         if (!props.selectedIndex || (this.state.activeMarker &&
             (this.state.markers[props.selectedIndex] !== this.state.activeMarker))) {
@@ -48,6 +48,7 @@ class MapDisplay extends Component {
         if (props.selectedIndex === null || typeof(props.selectedIndex) === "undefined") {
             return;
         };
+
         // Treat the marker as clicked
         this.onMarkerClick(this.state.markerProps[props.selectedIndex], this.state.markers[props.selectedIndex]);
     }
@@ -81,22 +82,21 @@ class MapDisplay extends Component {
         this.closeInfoWindow();
 
         //Documentation on fetch: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-        // Fetch the FourSquare data for the selected taco truck: radius set to 250 yards of ll (latitude and longitude), ll accuracy set to within 200 yards
-        let url = `https://api.foursquare.com/v2/venues/search?client_id=${FS_CLIENT}&client_secret=${FS_SECRET}&v=${FS_VERSION}&radius=250&ll=${props.position.lat},${props.position.lng}&llAcc=200`;
+        // Fetch the FourSquare data for the selected taco truck: radius set to 150 yards of ll (latitude and longitude), ll accuracy set to within 150 yards
+        let url = `https://api.foursquare.com/v2/venues/search?client_id=${FS_CLIENT}&client_secret=${FS_SECRET}&v=${FS_VERSION}&radius=150&ll=${props.position.lat},${props.position.lng}&llAcc=150`;
         let headers = new Headers();
         let request = new Request(url, {
             method: 'GET',
-                headers
+            headers
         });
 
         // fetch props for active marker
         let activeMarkerProps;
         fetch(request)
             .then(response => response.json())
-            .then(result => {
-                // Get specified venue data from foursquare
+            .then(result => {                // Get specified venue data from foursquare
                 // return
-                let restaurant = this.getBusinessInfo(props, result);
+              let restaurant = this.getBusinessInfo(props, result);
                 activeMarkerProps = {
                     ...props,
                     //first result in array becomes foursquare data to be used in app
@@ -114,20 +114,25 @@ class MapDisplay extends Component {
                                 //images uses photos properties results
                                 images: result.response.photos
                         };
-                        if (this.state.activeMarker)
-                            this.state.activeMarker.setAnimation(null);
+                            if (this.state.activeMarker)
+                                this.state.activeMarker.setAnimation(null);
                             marker.setAnimation(this.props.google.maps.Animation.BOUNCE);
                             this.setState({showingInfoWindow: true, activeMarker: marker, activeMarkerProps});
                         })
-                    } else {
+                        .catch((error)) => {
+                          alert("Sorry. No data received. Please check you internet connection")
+                        })
+
                     marker.setAnimation(this.props.google.maps.Animation.BOUNCE);
                     this.setState({showingInfoWindow: true, activeMarker: marker, activeMarkerProps});
                 }
             })
-        }
+            .catch((error) => {
+              alert("Sorry, no data was received. Please check your interent connection")
+            })
+    
 
-
-    updateMarkers = (Locations) => {
+  updateMarkers = (Locations) => {
         // finished after all Locations filtered
         if (!Locations)
         return;
